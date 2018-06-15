@@ -2,7 +2,8 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import {Font, AppLoading} from 'expo';
-import {Button, Root, Text} from 'native-base';
+import {Button, Root, Text, Card, Container, Header, Left, Body, Right, Icon} from 'native-base';
+import {FontAwesome} from '@expo/vector-icons';
 
 export default class App extends React.Component {
   constructor(...args) {
@@ -32,16 +33,19 @@ export default class App extends React.Component {
     } else {
       return (
         <Root>
-          <View style={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <Text>Surprise! It's me {this.state.name === 1 ? 'Ainul' : 'AinulBedjo'}</Text>
-            <Button style={styles.btn_center} 
-              title="btn1" 
-              onPress={() => {
-                this.state.name === 1 ? this.setState({name: 2}) : this.setState({name: 1})
-              }}>
-              <Text>Hey There</Text>
-            </Button>
+
+          <View>
+            <Container>
+              <Header>
+                <Left>
+                  <FontAwesome />
+                </Left>
+              </Header>
+
+              <Text>
+                Hello There :D
+              </Text>
+            </Container>
           </View>
         </Root>
       );
@@ -52,7 +56,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -61,4 +65,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 0
   },
+  card_one: {
+    height: '200px',
+    width: '80%',
+    padding: '20px',
+    overflow: 'hidden',
+  }
 });
