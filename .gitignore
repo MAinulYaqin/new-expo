@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 node_modules/**/*
 .expo/*
 npm-debug.*
-=======
+
 # Logs
 logs
 *.log
@@ -64,4 +63,3 @@ typings/
 
 # next.js build output
 .next
->>>>>>> 1de318ffe07c21cc6e848cc90b128b4fe42c5749
