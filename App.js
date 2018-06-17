@@ -1,9 +1,21 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-
 import {Font, AppLoading} from 'expo';
-import {Button, Root, Text, Card, Container, Header, Left, Body, Right, Icon} from 'native-base';
-import {FontAwesome} from '@expo/vector-icons';
+import {
+  Root,
+  Text,
+  Header,
+  Body,
+  Container,
+  Title,
+  Left,
+  Right,
+  Button,
+  Icon
+} from 'native-base';
+
+// import components
+import HeaderApp from './components/header/header';
+import ContentApp from './components/content/content';
 
 export default class App extends React.Component {
   constructor(...args) {
@@ -17,10 +29,14 @@ export default class App extends React.Component {
 
   async componentWillMount() {
     await Font.loadAsync({
-      Roboto: await import("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: await import("native-base/Fonts/Roboto_medium.ttf")
+      Roboto: await
+      import ("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: await
+      import ("native-base/Fonts/Roboto_medium.ttf")
     })
-    this.setState({loaded: true})
+    this.setState({
+      loaded: true
+    })
   }
 
   render() {
@@ -32,43 +48,10 @@ export default class App extends React.Component {
       )
     } else {
       return (
-        <Root>
-
-          <View>
-            <Container>
-              <Header>
-                <Left>
-                  <FontAwesome />
-                </Left>
-              </Header>
-
-              <Text>
-                Hello There :D
-              </Text>
-            </Container>
-          </View>
-        </Root>
+          <Container>
+            <Text>Hello World</Text>
+          </Container>
       );
     }
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'pink',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  btn_center: {
-    // marginLeft: '50%',
-    alignItems: 'center',
-    flex: 0
-  },
-  card_one: {
-    height: '200px',
-    width: '80%',
-    padding: '20px',
-    overflow: 'hidden',
-  }
-});
