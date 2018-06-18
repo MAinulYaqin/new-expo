@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
     Header,
     Body,
@@ -10,7 +10,7 @@ import {
     Icon
 } from 'native-base';
 
-export default class HeaderApp extends React.Component {
+export default class HeaderApp extends Component {
     render() {
         return (
             <Header>
