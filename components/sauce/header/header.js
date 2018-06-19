@@ -16,16 +16,16 @@ export default class HeaderApp extends Component {
         return (
             <Header style={styles.androidHeader}>
                 <Left>
-                    <Button transparent>
-                        <Icon name="menu"/>
-                    </Button>
+                    <Icon name="camera"/>
                 </Left>
-                
+
                 <Body style={styles.androidTitle}>
-                    <Title>Header</Title>
+                    <Title style={{color: white}}>Header</Title>
                 </Body>
 
-                <Right />
+                <Right>
+                    <Icon name="paper-plane" />
+                </Right>
             </Header>
         )
     }
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
             android: {
                 marginTop: StatusBar.currentHeight,
             }
-        })
+        }),
+        backgroundColor: 'white'
     },
     androidTitle: {
         ...Platform.select({
