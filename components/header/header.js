@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Platform, StatusBar, StyleSheet} from 'react-native';
 import {
     Header,
     Body,
@@ -13,23 +14,36 @@ import {
 export default class HeaderApp extends Component {
     render() {
         return (
-            <Header>
+            <Header style={styles.androidHeader}>
                 <Left>
                     <Button transparent>
                         <Icon name="menu"/>
                     </Button>
                 </Left>
                 
-                <Body>
-                    <Title>Ini Header</Title>
+                <Body style={styles.androidTitle}>
+                    <Title>Header</Title>
                 </Body>
 
-                <Right>
-                    <Button transparent>
-                    <Icon name='menu' />
-                    </Button>
-                </Right>
+                <Right />
             </Header>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    androidHeader: {
+        ...Platform.select({
+            android: {
+                marginTop: StatusBar.currentHeight,
+            }
+        })
+    },
+    androidTitle: {
+        ...Platform.select({
+            android: {
+                alignItems: 'flex-end'
+            }
+        })
+    }
+})
