@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Platform} from 'react-native';
-import {createBottomTabNavigator} from 'react-navigation';
+import {TabNavigator} from 'react-navigation';
 import {Icon} from 'native-base';
 
 // import components
@@ -16,7 +16,7 @@ export default class MainScreen extends Component {
         headerLeft: <Icon name="camera" style={{paddingLeft: 10}} />,
         headerTitle: 'Yaudin',
         headerTitleStyle: {
-            flex: 1,
+            alignSelf: 'center',
             textAlign: "center"
         },
         headerRight: <Icon name="paper-plane" style={{paddingRight: 10}} />
@@ -29,7 +29,7 @@ export default class MainScreen extends Component {
     }
 }
 
-const AppTabNavigator = createBottomTabNavigator({
+const AppTabNavigator = TabNavigator({
     HomeTab: {
         screen: HomeTab
     },
@@ -44,6 +44,24 @@ const AppTabNavigator = createBottomTabNavigator({
     },
     ProfileTab: {
         screen: ProfileTab
+    }
+}, {
+    animationEnabled: true,
+    swipeEnabled: true,
+    tabBarPosition: "bottom",
+    tabBarOptions: {
+        style: {
+            ...Platform.select({
+                android: {
+                    backgroundColor: 'white'
+                }
+            })
+        },
+        activeTintColor: '#000',
+        inactiveTintColor: '#d1cece',
+        showLabel: false,
+        showIcon: true,
+        renderIndicator: () => null
     }
 })
 
