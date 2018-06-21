@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Icon} from 'native-base';
+import {View, Text, StyleSheet, Platform, StatusBar} from 'react-native';
+import {Icon, Container, Content} from 'native-base';
 
+// import components
+import CardComponent from '../CardComponent';
 
 export default class HomeTab extends Component {
     static navigationOptions = {
@@ -12,9 +14,12 @@ export default class HomeTab extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>Home Section</Text>
-            </View>
+            <Container>
+                <Content>
+                    <CardComponent imageSource="2" likes="20"/>
+                    <CardComponent imageSource="3" likes="103"/>
+                </Content>
+            </Container>
         )
     }
 }
@@ -22,6 +27,11 @@ export default class HomeTab extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        ...Platform.select({
+            android: {
+                paddingTop: StatusBar.currentHight
+            }
+        }),
         'flex': 1,
         'alignItems': 'center',
         'justifyContent': 'center',

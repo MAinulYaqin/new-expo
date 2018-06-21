@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Platform} from 'react-native';
+import {View, StyleSheet, Platform, StatusBar} from 'react-native';
 import {TabNavigator} from 'react-navigation';
 import {Icon} from 'native-base';
 
@@ -20,6 +20,10 @@ export default class MainScreen extends Component {
             textAlign: "center"
         },
         headerRight: <Icon name="paper-plane" style={{paddingRight: 10}} />
+    }
+
+    static navigatorStyle = {
+        statusBarColor: 'blue'
     }
 
     render() {
