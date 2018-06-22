@@ -18,7 +18,8 @@ export default class Setup extends React.Component {
     async componentWillMount() {
         await Font.loadAsync({
             'Roboto': await require('native-base/Fonts/Roboto.ttf'),
-            'Roboto_medium': await require('native-base/Fonts/Roboto_medium.ttf')
+            'Roboto_medium': await require('native-base/Fonts/Roboto_medium.ttf'),
+            'Billabong': await require('../../assets/fonts/Billabong.ttf')
         })
         this.setState({
             loaded: true

@@ -13,6 +13,8 @@ export default class HomeTab extends Component {
     }
 
     render() {
+        const stories = [1, 2, 3, 4, 5, 6]
+
         return (
             <Container>
                 <Content>
@@ -34,15 +36,9 @@ export default class HomeTab extends Component {
                                 paddingStart: 5,
                                 paddingEnd: 5
                             }}>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
-                            <Thumbnail style={styles.stories} source={require('../../../assets/feeder/feed-3.png')}/>
+                            {stories.map(e => (
+                                <Thumbnail style={styles.stories} key={e} source={require('../../../assets/feeder/feed-3.png')}/>
+                            ))}
                         </ScrollView>
                     </View>
                     <CardComponent imageSource="2" likes="20"/>

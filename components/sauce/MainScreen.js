@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Platform, StatusBar} from 'react-native';
+import {View, StyleSheet, Platform, StatusBar, Text} from 'react-native';
 import {TabNavigator} from 'react-navigation';
 import {Icon} from 'native-base';
 
@@ -14,10 +14,14 @@ export default class MainScreen extends Component {
 
     static navigationOptions = {
         headerLeft: <Icon name="camera" style={{paddingLeft: 10}} />,
-        headerTitle: 'Yaudin',
+        title: 'Yaudin',
         headerTitleStyle: {
             alignSelf: 'center',
-            textAlign: "center"
+            textAlign: 'center',
+            fontFamily: 'Billabong',
+            fontWeight: '200',
+            fontSize: 35,
+            paddingTop: 10
         },
         headerRight: <Icon name="paper-plane" style={{paddingRight: 10}} />
     }
