@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Platform, StatusBar, ScrollView} from 'react-native';
-import {Icon, Container, Content, Right, Left, Thumbnail} from 'native-base';
+import {Icon, Container, Content, Right, Left, Thumbnail, Header, Title, Body} from 'native-base';
 
 // import components
 import CardComponent from '../CardComponent';
@@ -17,6 +17,15 @@ export default class HomeTab extends Component {
 
         return (
             <Container>
+
+                <Header style={styles.androidHeader}>
+                     <Left><Icon name="camera" style={{paddingLeft: 10}}/></Left>
+                    <Body style={styles.androidTitle}>
+                        <Text style={{color: 'black', fontFamily: 'Billabong', fontWeight: '300', fontSize: 27}}>Yaudin</Text>
+                    </Body>
+                    <Right><Icon name="paper-plane" style={{paddingRight: 10}}/></Right>
+                </Header>
+
                 <Content>
                     <View>
                         <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 7, marginTop: 4}}>
@@ -51,15 +60,21 @@ export default class HomeTab extends Component {
 
 
 const styles = StyleSheet.create({
-    container: {
+    androidHeader: {
         ...Platform.select({
             android: {
-                paddingTop: StatusBar.currentHight
+                marginTop: StatusBar.currentHeight,
             }
         }),
-        'flex': 1,
-        'alignItems': 'center',
-        'justifyContent': 'center',
+        backgroundColor: 'white'
+    },
+    androidTitle: {
+        ...Platform.select({
+            android: {
+                alignItems: 'flex-end'
+            }
+        }),
+        marginTop: 10
     },
     stories: {
         marginHorizontal: 5,

@@ -13,17 +13,7 @@ import ProfileTab from './AppTabNavigator/ProfileTab';
 export default class MainScreen extends Component {
 
     static navigationOptions = {
-        headerLeft: <Icon name="camera" style={{paddingLeft: 10}} />,
-        title: 'Yaudin',
-        headerTitleStyle: {
-            alignSelf: 'center',
-            textAlign: 'center',
-            fontFamily: 'Billabong',
-            fontWeight: '200',
-            fontSize: 35,
-            paddingTop: 10
-        },
-        headerRight: <Icon name="paper-plane" style={{paddingRight: 10}} />
+        header: null
     }
 
     static navigatorStyle = {
