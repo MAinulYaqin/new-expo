@@ -18,6 +18,7 @@ import {
 	Title,
 	Body
 } from 'native-base';
+import { LinearGradient } from 'expo';
 
 // import components
 import CardComponent from '../CardComponent';
@@ -83,11 +84,10 @@ export default class HomeTab extends Component {
 								paddingEnd: 5
 							}}>
 							{stories.map(e => (
-								<Thumbnail
-									style={styles.stories}
-									key={e}
-									source={require('../../../assets/feeder/feed-3.png')}
-								/>
+								<LinearGradient key={e} colors={['#f09433', '#e5583c', '#dc2743', '#cc2366', '#bc1888']}>
+									<Thumbnail
+									source={require('../../../assets/feeder/feed-3.png')}/>
+								</LinearGradient>
 							))}
 						</ScrollView>
 					</View>
@@ -115,10 +115,5 @@ const styles = StyleSheet.create({
 				marginTop: 10
 			}
 		})
-	},
-	stories: {
-		marginHorizontal: 5,
-		borderColor: 'pink',
-		borderWidth: 2
 	}
 });
