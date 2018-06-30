@@ -84,9 +84,33 @@ export default class HomeTab extends Component {
 								paddingEnd: 5
 							}}>
 							{stories.map(e => (
-								<LinearGradient key={e} colors={['#f09433', '#e5583c', '#dc2743', '#cc2366', '#bc1888']}>
-									<Thumbnail
-									source={require('../../../assets/feeder/feed-3.png')}/>
+								<LinearGradient 
+									style={{
+										marginHorizontal: 5,
+										borderRadius: 32.5,
+										width: 65,
+										height: 65,
+										alignItems: 'center',
+										justifyContent: 'center',
+										overflow: 'hidden',
+										padding: 5
+									}}
+									key={e} colors={['#f09433', '#e5583c', '#dc2743', '#cc2366', '#bc1888']}>
+									
+									<View 
+										style={{
+											backgroundColor: 'white',
+											width: 61,
+											height: 61,
+											borderRadius: 30.5,
+											alignItems: 'center',
+											justifyContent: 'center'}}>
+
+										<Thumbnail
+										style={{margin: 5}}
+										source={require('../../../assets/feeder/feed-3.png')}/>
+									</View>
+
 								</LinearGradient>
 							))}
 						</ScrollView>
